@@ -5,7 +5,10 @@ const models = require('./app/models');
 
 const init = async () => {
   // Create server
-  const server = new Hapi.Server({ port: config.port });
+  const server = new Hapi.Server({
+    port: config.port,
+    routes: { cors: { origin: ['*'] } },
+  });
 
   // Define routes
   server.route(routes);
