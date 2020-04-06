@@ -7,6 +7,14 @@ const deleteNoteController = require('./controllers/deleteNote');
 module.exports = [
   {
     method: 'GET',
+    path: '/',
+    handler: (req, h) => 'api works',
+    options: {
+      auth: false,
+    },
+  },
+  {
+    method: 'GET',
     path: '/notes',
     handler: getAllNotesController,
   },

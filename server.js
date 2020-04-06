@@ -26,12 +26,10 @@ const init = async () => {
       algorithms: ['RS256'],
     },
     validate: async function (decoded) {
-      console.log('Decoded', decoded);
       if (
         !decoded ||
         !decoded.sub ||
-        decoded.iss !== config.auth.issuer ||
-        decoded.aud !== config.auth.audience
+        decoded.iss !== config.auth.issuer
         ) {
         return { isValid: false };
       }

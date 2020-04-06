@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
     },
+    userId: {
+      type: DataTypes.STRING,
+      field: 'user_id',
+    },
     title: DataTypes.STRING,
     content: DataTypes.STRING,
   });
